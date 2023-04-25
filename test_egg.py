@@ -14,6 +14,12 @@ def test_get_color():
     assert egg.get_color() == EGG_COLOR
 
 
+def test_get_registration():
+    registration = "05-FR12301FE"
+    egg = Egg(EGG_ORIGIN, EGG_COLOR, registration)
+    assert egg.get_registration() == registration
+
+
 def test_valid_egg_registration():
     egg = Egg(EGG_ORIGIN, EGG_COLOR, "05-FR12301FE")
     assert egg.is_valid() == True

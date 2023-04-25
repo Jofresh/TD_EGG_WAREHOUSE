@@ -28,6 +28,9 @@ class Egg:
     def get_color(self):
         return self.__color
 
+    def get_registration(self):
+        return self.__registration
+
     def is_valid(self):
         """
         Check if an egg is valid according to his registration.
