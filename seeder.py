@@ -62,7 +62,6 @@ for egg in TOO_MANY_EGGS:
 # Populating the database from created objects
 warehouses = [valid_warehouse, warehouse_with_too_many_eggs] + invalid_eggs_warehouse
 for warehouse in warehouses:
-    print(warehouse)
     inserted_wh = db[WAREHOUSE_COL].insert_one(
         {"_id": ObjectId(), "capacity": warehouse.get_capacity()}
     )
