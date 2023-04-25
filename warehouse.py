@@ -27,3 +27,8 @@ class Warehouse:
                 return False
 
         return True
+
+    def __str__(self):
+        return str(
+            {"capacity": self.__capacity, "eggs": [str(egg) for egg in self.eggs]}
+        )
