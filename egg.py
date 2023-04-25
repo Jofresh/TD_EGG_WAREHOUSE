@@ -73,3 +73,13 @@ class Egg:
             return False
 
         return True
+
+    def __str__(self):
+        return str(
+            {
+                "origin": self.__origin,
+                "color": self.__color,
+                "registration": self.__registration,
+                "is_valid": self.is_valid(),
+            }
+        )
