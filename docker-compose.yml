@@ -1,0 +1,23 @@
+version: "3"
+services:
+  mongodb:
+    image: "mongo:latest"
+    ports:
+      - "27017:27017"
+    networks:
+      - mynet
+  seed_mongo:
+    image: "geoffraygaborit/seed_mongo"
+    networks:
+      - mynet
+    depends_on:
+      - mongodb
+  egg_warehouse:
+    build: .
+    networks:
+      - mynet
+    depends_on:
+      - seed_mongo
+    command: python3 egg_warehouse.py
+networks:
+  mynet:
